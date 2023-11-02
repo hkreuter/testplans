@@ -1,0 +1,47 @@
+{
+  "name": "hkreuter/testplans",
+  "type": "project",
+  "description": "This file should be used as an OXID eShop project root composer.json file. Entries provided here intended to be examples and could be changed to your specific needs.",
+  "license": "proprietary",
+  "minimum-stability": "dev",
+  "require": {
+      "oxid-esales/oxideshop-ce": "v7.0.1",
+      "makaira/oxid-connect-essential": "2.1.0",
+      "oxid-esales/apex-theme": "v1.0.0",
+      "oxid-esales/gdpr-optin-module": "v3.0.1",
+      "oxid-esales/twig-admin-theme": "v2.1.0",
+      "oxid-esales/twig-component": "v2.1.0",
+      "oxid-professional-services/usercentrics": "v2.0.2"
+  },
+  "require-dev": {
+     "codeception/codeception": "^5.0",
+     "codeception/module-asserts": "^3.0",
+     "codeception/module-db": "^3.0",
+     "codeception/module-filesystem": "^3.0",
+     "codeception/module-webdriver": "^3.1",
+     "composer/composer": "^2.0",
+     "incenteev/composer-parameter-handler": "^v2.1.4",
+     "mikey179/vfsstream": "~1.6.8",
+     "oxid-esales/codeception-modules": "dev-b-7.0.x",
+     "oxid-esales/codeception-page-objects": "dev-b-7.0.x",
+     "oxid-esales/developer-tools": "dev-b-7.0.x",
+     "oxid-esales/oxideshop-ide-helper": "dev-b-7.0.x",
+     "phpspec/prophecy-phpunit": "^v2.0.1",
+     "phpunit/phpunit": "^9.1.1",
+     "squizlabs/php_codesniffer": "^3.5.4"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "OxidEsales\\EshopCommunity\\Tests\\": "./vendor/oxid-esales/oxideshop-ce/tests"
+    }
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "allow-plugins": {
+      "oxid-esales/oxideshop-composer-plugin": true,
+      "oxid-esales/oxideshop-unified-namespace-generator": true
+    }
+  }
+}

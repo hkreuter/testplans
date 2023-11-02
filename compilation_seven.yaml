@@ -6,8 +6,8 @@ prepare_shop:
     php: '["8.1"]'
     mysql: '["8.0"]'
   git:
-    shop_url: https://github.com/joernott/oxideshop_test_metapackage.git
-    shop_ref: &git_shop_ref 'b-8.0'
+    shop_url: https://github.com/hkreuter/testplans.git
+    shop_ref: &git_shop_ref 'b-7.0.x'
 
 install_shop:
   matrix: *matrix

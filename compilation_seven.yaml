@@ -12,7 +12,7 @@ prepare_shop:
     require:
       install: |
         oxid-esales/twig-admin-theme:v2.1.0
-        oxid-esales/apex-theme:dev-b-7.0.x
+        oxid-esales/apex-theme:v1.0.0
 
 install_shop:
   matrix: *matrix

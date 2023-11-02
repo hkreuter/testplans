@@ -8,6 +8,11 @@ prepare_shop:
   git:
     shop_url: https://github.com/hkreuter/testplans.git
     shop_ref: &git_shop_ref 'b-7.0.x'
+  composer:
+    require:
+      install: |
+        oxid-esales/twig-admin-theme:v2.1.0
+        oxid-esales/apex-theme: dev-b-7.0.x
 
 install_shop:
   matrix: *matrix

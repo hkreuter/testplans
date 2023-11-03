@@ -1,6 +1,15 @@
 # This config depends on the defaults.yml testplan
 # Only diverging settings are defined here
 
+composer:
+  configure:
+    ref: &dev_ref dev-b-7.0.x
+  require:
+    install: |
+      oxid-esales/twig-admin-theme:v2.1.0
+      oxid-esales/apex-theme:v1.0.0
+    options: ''
+
 prepare_shop:
   matrix: &matrix
     php: '["8.1"]'
@@ -13,11 +22,6 @@ install_shop:
   matrix: *matrix
   git:
     shop_ref: *git_shop_ref
-  composer:
-    require:
-      install: |
-        oxid-esales/twig-admin-theme:v2.1.0
-        oxid-esales/apex-theme:v1.0.0
 
 install_module:
   matrix: *matrix

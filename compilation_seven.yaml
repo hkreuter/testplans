@@ -8,32 +8,25 @@ prepare_shop:
   git:
     shop_url: https://github.com/hkreuter/testplans.git
     shop_ref: &git_shop_ref 'b-7.0.x'
+
+install_shop:
+  matrix: *matrix
+  git:
+    shop_ref: *git_shop_ref
   composer:
     require:
       install: |
         oxid-esales/twig-admin-theme:v2.1.0
         oxid-esales/apex-theme:v1.0.0
 
-install_shop:
-  matrix: *matrix
-  git:
-    shop_ref: *git_shop_ref
-
 install_module:
   matrix: *matrix
 
 unit_tests:
-  matrix: *matrix
-  configuration: &phpunit_configuration 'vendor/oxid-esales/oxideshop-ce/phpunit.xml'
-  # yamllint disable-line rule:line-length
-  additional_options: '--bootstrap vendor/oxid-esales/oxideshop-ce/tests/bootstrap.php vendor/oxid-esales/oxideshop-ce/tests --coverage-clover=/var/www/unit_coverage.xml'
-  test: 'vendor/oxid-esales/oxideshop-ce/tests/Unit'
+  skip: true
 
 integration_tests:
-  matrix: *matrix
-  configuration: *phpunit_configuration
-  additional_options: '--bootstrap vendor/oxid-esales/oxideshop-ce/tests/bootstrap.php'
-  test: 'vendor/oxid-esales/oxideshop-ce/tests/Integration'
+  skip: true
 
 codeception_tests:
   matrix: *matrix

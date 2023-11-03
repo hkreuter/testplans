@@ -1,7 +1,13 @@
 # This config depends on the defaults.yml testplan
 # Only diverging settings are defined here
 
-global:
+prepare_shop:
+  matrix: &matrix
+    php: '["8.1"]'
+    mysql: '["8.0"]'
+  git:
+    shop_url: https://github.com/hkreuter/testplans.git
+    shop_ref: &git_shop_ref 'b-7.0.x'
   composer:
     configure:
       ref: &dev_ref dev-b-7.0.x
@@ -12,18 +18,19 @@ global:
         oxid-esales/apex-theme:v1.0.0
       options: ''
 
-prepare_shop:
-  matrix: &matrix
-    php: '["8.1"]'
-    mysql: '["8.0"]'
-  git:
-    shop_url: https://github.com/hkreuter/testplans.git
-    shop_ref: &git_shop_ref 'b-7.0.x'
-
 install_shop:
   matrix: *matrix
   git:
     shop_ref: *git_shop_ref
+  composer:
+    configure:
+      ref: &dev_ref dev-b-7.0.x
+    require:
+      ref: &dev_ref dev-b-7.0.x
+      install: |
+        oxid-esales/twig-admin-theme:v2.1.0
+        oxid-esales/apex-theme:v1.0.0
+      options: ''
 
 install_module:
   matrix: *matrix

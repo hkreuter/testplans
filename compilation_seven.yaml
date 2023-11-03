@@ -47,10 +47,7 @@ codeception_tests:
   max_parallel: &codeception_max_parallel 4
   configuration: &codeception_configuration 'vendor/oxid-esales/oxideshop-ce/tests/codeception.yml'
   composer:
-    configure:
-      ref: &dev_ref dev-b-7.0.x
     require:
-      ref: &dev_ref dev-b-7.0.x
       install: |
         oxid-esales/twig-admin-theme:v2.1.0
         oxid-esales/apex-theme:v1.0.0
